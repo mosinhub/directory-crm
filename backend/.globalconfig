@@ -1,0 +1,62 @@
+is_global = true
+
+# Все правила категории Security — ошибки
+dotnet_analyzer_diagnostic.category-Security.severity = error
+
+# CA2007: ConfigureAwait — в ASP.NET Core нет SynchronizationContext,
+# поэтому обязательный ConfigureAwait(false) обычно не нужен
+dotnet_diagnostic.CA2007.severity = none
+
+# CA1062: обязательную runtime-проверку null для публичных методов не требуем;
+# используем nullable reference types и проверяем null там, где это необходимо
+dotnet_diagnostic.CA1062.severity = none
+
+# CA1812: uninstantiated internal classes — возможны false positives
+# для классов, создаваемых через DI/IoC
+dotnet_diagnostic.CA1812.severity = none
+
+# CA1034: visible nested types — допускаем их там,
+# где это оправдано организацией vertical slice
+dotnet_diagnostic.CA1034.severity = none
+
+# CA1515: ASP.NET Core может обнаруживать public entry-point types,
+# поэтому не требуем делать их internal
+dotnet_diagnostic.CA1515.severity = none
+
+# MA0004: Use Task.ConfigureAwait — для ASP.NET Core не требуем
+dotnet_diagnostic.MA0004.severity = none
+
+# MA0048: имя файла должно совпадать с именем типа — конфликтует с vertical slice,
+# где один файл может содержать несколько связанных типов
+dotnet_diagnostic.MA0048.severity = none
+
+# MA0051: длина метода — use case handlers могут намеренно быть длиннее
+dotnet_diagnostic.MA0051.severity = none
+
+# MA0053: требование sealed для классов — слишком агрессивно для DDD entities
+dotnet_diagnostic.MA0053.severity = none
+
+# RCS1090: Add ConfigureAwait(false) — для ASP.NET Core не требуем
+dotnet_diagnostic.RCS1090.severity = none
+
+# AsyncFixer01: удаление async/await не всегда желательно,
+# например когда важны exception handling или семантика async-метода
+dotnet_diagnostic.AsyncFixer01.severity = none
+
+# S1135: TODO/FIXME — используем как рабочие маркеры
+dotnet_diagnostic.S1135.severity = none
+
+# S1144: unused private members — возможны false positives
+# при использовании reflection или framework conventions
+dotnet_diagnostic.S1144.severity = none
+
+# Правила строже, чем по умолчанию:
+
+# S1125: redundant Boolean literals
+dotnet_diagnostic.S1125.severity = error
+
+# S6673: порядок placeholders должен соответствовать logging arguments
+dotnet_diagnostic.S6673.severity = error
+
+# S108: empty code blocks должны содержать объясняющий комментарий
+dotnet_diagnostic.S108.severity = error
