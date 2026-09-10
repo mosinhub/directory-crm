@@ -3,6 +3,8 @@
     <File Path="../.globalconfig" />
     <File Path="../Directory.Build.props" />
     <File Path="../Directory.Packages.props" />
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/DirectoryService.Contracts/DirectoryService.Contracts.csproj" />
